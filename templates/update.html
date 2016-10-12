@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>update</title>
+</head>
+<body>	
+	<h1>Update your info</h1>
+	{%for info in all_users: %}
+	<form action="/friends/{{info['id']}}" method="post">
+		Email: <input type="text" name="email">
+		Name: <input type="text" name="name">
+		<input type="submit" name="submit" value="update">
+	</form>
+	{%endfor%}
+</body>
+</html>

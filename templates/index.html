@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Full friends</title>
+</head>
+<body>
+	<div class="user_info">
+		{%for info in all_users: %}
+		<p>Email: {{info['email']}}</p>
+		<p>Name: {{info['name']}}</p>
+		<form action="/update/{{info['id']}}/edit" method="get">
+			<!-- <input type="hidden" name="{{info['email']}}" value="{{info['email']}}"> -->
+
+			<input type="submit" name="submit" value="update">
+		</form>
+		<form action="/delete/{{info['id']}}/confirm" method="get">
+			<!-- <input type="hidden" name="{{info['email']}}" value="{{info['email']}}"> -->
+			<input type="submit" name="submit" value="delete">
+		</form>
+		{%endfor%}
+	</div>
+
+	<p>Create user</p>
+	<form action="/friends" method="post">
+		Email: <input type="text" name="email">
+		Name: <input type="text" name="name">
+		<input type="submit" name="submit" value="create user">
+
+	</form>
+
+</body>
+</html>

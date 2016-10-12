@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delete</title>
+</head>
+<body>
+	<h1>Are you sure?</h1>
+	{%for info in all_users: %}
+	<form action="/friends/{{info['id']}}/delete" method="post">
+		<input type="submit" name="yes" value="yes">
+	</form>
+	<form action="/">
+		<input type="submit" name="no" value="no">
+	</form>
+	{%endfor%}
+</body>
+</html>
